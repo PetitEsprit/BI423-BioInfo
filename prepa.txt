@@ -1,0 +1,23 @@
+Ex01:
+	-Ouvre un fichier, mets toutes les lignes à la suite des autres
+		Puis les mets en majuscules
+	- Ajoutes la ligne à la séquence en excluant le "\n"
+Ex02:
+	- Vérifie que chaque caractère des ligne de la séquence
+		apartient à l'alphabet(des acides aminés)
+	- Si le flag err était enlevé, boucle infinie
+Ex03:
+	Arret prématuré du programme
+
+Ex04:
+	début...
+	1-->  CECE...
+	Fin traitement
+	
+Ex05:
+	debut...
+	1-->AR
+	2-->NK
+	3-->GHHIR
+	4-->EQG
+	Fin
