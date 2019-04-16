@@ -9,6 +9,7 @@ i = 0
 countC = 0
 countG = 0
 skew = 0
+tmpskew = 0
 minSkew = 0
 maxSkew = 0
 
@@ -26,7 +27,7 @@ while i < len(seq):
 	if(i % tf == 0):
 		if(countC != 0 or countG !=0):
 			# la base du prog
-			skew = float(countG - countC)/ float(countC + countG)
+			tmpskew = float(countG - countC)/ float(countC + countG)
 			plt.scatter(i, skew, c = "black", s=10)
 			
 			if skew > maxSkew:
@@ -36,15 +37,17 @@ while i < len(seq):
 		else:
 			skew = 0
 		countC = countG = 0
+		skew += tmpskew
 		print "skew: ", skew
 	i = i + 1
 
 if(countC != 0 or countG !=0):
-			skew = float(countG - countC)/ float(countC + countG)
+			tmpskew = float(countG - countC)/ float(countC + countG)
+			skew += tmpskew
 			plt.scatter(i, skew, c = "black", s=10)
 
 
-plt.title("GC Skew") # titre du graphique
+plt.title("GC Skew Cumul") # titre du graphique
 plt.xlabel("Position") # label/nom de l'axe des abscisses
 plt.ylabel("Skew") # label/nom de l'axe des des ordonnees
 plt.xlim(0, len(seq)) # taille/longueur de l'axe des "x"
